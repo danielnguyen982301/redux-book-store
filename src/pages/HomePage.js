@@ -36,7 +36,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    dispatch(getBooks({ _page: pageNum, _limit: limit, _query: query }));
+    dispatch(getBooks({ _page: pageNum, _limit: limit, q: query }));
   }, [pageNum, limit, query, dispatch]);
   //--------------form
   const defaultValues = {

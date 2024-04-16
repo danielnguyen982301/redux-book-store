@@ -49,12 +49,12 @@ const slice = createSlice({
 });
 
 export const getBooks =
-  ({ _page = 1, _limit = 10, _query }) =>
+  ({ _page = 1, _limit = 10, q }) =>
   async (dispatch) => {
     dispatch(slice.actions.startLoading());
     try {
       const params = { _page, _limit };
-      if (_query) params._query = _query;
+      if (q) params.q = q;
       const res = await api.get("/books", { params });
       dispatch(slice.actions.getBooksSuccess(res.data));
     } catch (error) {
