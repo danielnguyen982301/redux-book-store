@@ -47,6 +47,7 @@ const HomePage = () => {
   });
   const { handleSubmit } = methods;
   const onSubmit = (data) => {
+    setPageNum(1);
     setQuery(data.searchQuery);
   };
   return (
